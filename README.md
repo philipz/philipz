@@ -1,4 +1,4 @@
 ## Hi there 👋
 
-| <img align="center" src="https://github-readme-stats.vercel.app/api?username=philipz&show_icons=true&include_all_commits=true&theme=buefy&hide_border=true" alt="Philipz's github stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=philipz&layout=compact&theme=buefy&hide_border=true" /> |
-| ------------- | ------------- |
+[![Philipz's github stats](https://github-readme-stats.vercel.app/api?username=philipz&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21)](https://github.com/philipz/github-readme-stats)
+[![jangalinski's languages](https://github-readme-stats.vercel.app/api/top-langs/?username=philipz&title_color=ffffff&text_color=c9cacc&icon_color=2bbc8a&bg_color=1d1f21)](https://github.com/jangalinski/philipz)
