@@ -1,0 +1,20 @@
+.github/workflows/refresh.yml
+  h_1b119f25eaf333 1-31
+README.md
+  h_1b119f25eaf333 1-5,7-41,43-49
+assets/readout.svg
+  h_1b119f25eaf333 1
+generate_readout.py
+  h_1b119f25eaf333 1-308
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "21421055ef74042d54ef375acfdd2f7c990a4629",
+  "prompts": {},
+  "humans": {
+    "h_1b119f25eaf333": {
+      "author": "philipz <philipzheng@gmail.com>"
+    }
+  }
+}
