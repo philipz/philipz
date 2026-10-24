@@ -10,7 +10,7 @@
     <a href="https://github.com/philipz/skills">skills</a> &middot;
     <a href="https://github.com/philipz/notebooklm_exporter">notebooklm_exporter</a> &middot;
     <a href="https://github.com/philipz/deepwiki-md-chrome-extension">deepwiki-md-chrome-extension</a> &middot;
-    <a href="https://github.com/philipz/sandcastle">sandcastle</a> &middot;
+    <a href="https://github.com/philipz/open-ptc-agent">open-ptc-agent</a> &middot;
     <a href="https://github.com/philipz/autoresearch">autoresearch</a>
   </sub>
   <br>

@@ -30,7 +30,7 @@ CATEGORIES = [
         ("philipz", "skills", "agent skills & specs", "v1.0", "owner"),
         ("philipz", "notebooklm_exporter", "export notebooklm notes", "18 stars", "owner"),
         ("philipz", "deepwiki-md-chrome-extension", "deepwiki markdown conv", "11 stars", "owner"),
-        ("philipz", "sandcastle", "sandboxed agent runner", "wip", "owner"),
+        ("philipz", "open-ptc-agent", "mcp code execution agent", "poc", "owner"),
         ("philipz", "autoresearch", "autonomous ai research", "demo", "owner"),
     ]),
     ("cloudflare & workers", [
@@ -55,7 +55,7 @@ CATEGORIES = [
 ]
 
 GRAPH = [
-    ("* ", "a1b2c3d", " (HEAD -> main) ", "ai agent tooling: skills, autoresearch, sandcastle"),
+    ("* ", "a1b2c3d", " (HEAD -> main) ", "ai agent tooling: skills, autoresearch, open-ptc-agent"),
     ("| *", "f4e3d2c", " (cloudflare-durable) ", "durable execution: workers, restate, inngest pocs"),
     ("|/", "", "", ""),
     ("* ", "7e8d9c0", " ", "software architecture: spring modulith & camunda workflows"),
@@ -113,17 +113,21 @@ def author_commit_count(owner, name, author):
 def repo_activity(owner, name):
     """(days since last push, my commits, total commits)"""
     now = datetime.datetime.now(datetime.timezone.utc)
-    meta, _ = api(f"/repos/{owner}/{name}")
-    pushed = datetime.datetime.fromisoformat(meta["pushed_at"].replace("Z", "+00:00"))
-    total = commit_count(owner, name)
-    if meta["fork"]:
-        mine = author_commit_count(owner, name, OWNER)
-        if mine == 0:
-            mine = 1
-    else:
-        mine = total
-    days = (now - pushed).days
-    return days, mine, total
+    try:
+        meta, _ = api(f"/repos/{owner}/{name}")
+        pushed = datetime.datetime.fromisoformat(meta["pushed_at"].replace("Z", "+00:00"))
+        total = commit_count(owner, name)
+        if meta.get("fork"):
+            mine = author_commit_count(owner, name, OWNER)
+            if mine == 0:
+                mine = 1
+        else:
+            mine = total
+        days = (now - pushed).days
+        return days, mine, total
+    except Exception as e:
+        print(f"warning: failed to get activity for {owner}/{name}: {e}")
+        return 999, 0, 0
 
 
 def updated_str(days):
